@@ -22,7 +22,7 @@ header.global-header {
                 margin: 20px 0 0;
             }
             .logo {
-                height: 21px;
+                height: 45px;
                 margin: 0;
             }
         }
@@ -154,6 +154,8 @@ header.global-header {
     padding: 0 15px;
     max-width: 1600px;
     box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 20px;
     &:after {
         display: block;
         clear: both;

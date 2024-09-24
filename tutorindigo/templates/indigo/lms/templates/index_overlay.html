@@ -1,2 +1,25 @@
-<h1>${settings.PLATFORM_NAME}</h1>
-<p>{{ INDIGO_WELCOME_MESSAGE }}</p>
+## mako
+<%namespace name='static' file='static_content.html'/>
+<%namespace file='./main.html' import="login_query"/>
+<%!
+from django.conf import settings
+from django.urls import reverse
+from django.utils.translation import gettext as _
+%>
+
+<div class="bg-gray-900">
+    <div class="relative isolate overflow-hidden pt-14" style="min-height: calc(100vh - 234.5px);">
+      <img src="${static.url('images/hero_background.jpg')}" alt="hero background image" class="absolute inset-0 -z-10 h-full w-full object-cover">
+      <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+      </div>
+      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+        </div>
+        <div class="text-center">
+          <h1 class="text-4xl mb-8 font-bold tracking-tight text-white sm:text-5xl">{{ INDIGO_WELCOME_MESSAGE }}</h1>
+          <a class="rounded bg-indigoPrimary px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigoSecondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigoSecondary" aria-label="Login" href="/login${login_query()}">${_("Login")}</a>
+        </div>
+      </div>
+    </div>
+</div>
+  

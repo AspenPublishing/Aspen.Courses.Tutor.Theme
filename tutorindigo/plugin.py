@@ -4,7 +4,7 @@ import os
 import typing as t
 
 import importlib_resources
-from tutor import hooks
+from tutor import hooks, utils
 from tutor.__about__ import __version_suffix__
 
 from .__about__ import __version__
@@ -19,20 +19,27 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
     # Add here your new settings
     "defaults": {
         "VERSION": __version__,
-        "WELCOME_MESSAGE": "The place for all your online learning",
+        "WELCOME_MESSAGE": "Welcome to the Aspen Courses",
+        "COMPANY_NAME": "Aspen Publishing",
         "ENABLE_DARK_THEME": False,
-        "PRIMARY_COLOR": "#15376D",  # Indigo
+        "PRIMARY_COLOR": "#bf2d2e",  # Indigo
+        "SHOW_UNAUTHENTICATED_NAVBAR": False,
         # Footer links are dictionaries with a "title" and "url"
         # To remove all links, run:
         # tutor config save --set INDIGO_FOOTER_NAV_LINKS=[]
         "FOOTER_NAV_LINKS": [
-            {"title": "About Us", "url": "/about"},
-            {"title": "Blog", "url": "/blog"},
-            {"title": "Donate", "url": "/donate"},
-            {"title": "Terms of Service", "url": "/tos"},
-            {"title": "Privacy Policy", "url": "/privacy"},
-            {"title": "Help", "url": "/help"},
-            {"title": "Contact Us", "url": "/contact"},
+            {"title": "About Us", "url": "https://aspenpublishing.com/pages/discover-jd-next-program"},
+            {"title": "Support", "url": "https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next"},
+            {"title": "End User License Agreement", "url": "/agreement"},
+            {"title": "Terms Of Use", "url": "/tos"},
+            {"title": "Privacy Statement", "url": "/privacy"},
+            {"title": "California Disclosure", "url": "/disclosure"},
+        ],
+        "FOOTER_SOCIAL_LINKS": [
+            {"title": "x", "url": "https://twitter.com/AspenPublishing"},
+            {"title": "linkedin", "url": "https://www.linkedin.com/company/aspenpublishing/"},
+            {"title": "youtube", "url": "https://www.youtube.com/@aspenpublishing6830"},
+            {"title": "facebook", "url": "https://www.facebook.com/profile.php?id=61555997104704"},
         ],
     },
     "unique": {},
@@ -41,8 +48,9 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
 
 # Theme templates
 hooks.Filters.ENV_TEMPLATE_ROOTS.add_item(
-    str(importlib_resources.files("tutorindigo") / "templates")
+    (str(importlib_resources.files("tutorindigo") / "templates"))
 )
+
 # This is where the theme is rendered in the openedx build directory
 hooks.Filters.ENV_TEMPLATE_TARGETS.add_items(
     [

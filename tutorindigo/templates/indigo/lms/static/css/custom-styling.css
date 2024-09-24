@@ -1,0 +1,145 @@
+.content-wrapper {
+    margin: 0px !important;
+    padding: 0px !important;
+    max-width: 100% !important;
+}
+
+.custom-anchor {
+    text-decoration: none !important;
+}
+
+a {
+    text-decoration: none !important;
+    font-size: 1.2rem !important;
+}
+
+.global-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+#custom-course-about-section h2,
+#custom-course-about-section h3,
+#custom-course-about-section h4,
+#custom-course-about-section h5,
+#custom-course-about-section h6 {
+    color: #f1f5f9 !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+
+* {
+    font-family: 'Vazirmatn', sans-serif !important;
+}
+
+.fa,
+.fa:before {
+    font-family: 'FontAwesome' !important;
+}
+
+.accomplishment-rendering {
+    background-image: url("/static/tailwind/images/certificate_background.jpeg");
+    background-size: cover;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+}
+
+#custom-course-about-section p {
+    font-size: 1.25rem !important;
+}
+
+#course-about-section {
+    display: contents;
+    font-size: 1.25rem !important;
+}
+
+#course-syllabus-section {
+    display: contents;
+    font-size: 1.25rem !important;
+}
+
+#course-syllabus-section section {
+    padding: 20px 10px;
+    background: #0c4a6e;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    color:#e0f2fe;
+}
+
+
+#course-instructor-section .staff-bio {
+    margin-top: 1.5rem; /* mt-6 */
+    font-size: 1.05rem; /* text-base */
+    line-height: 1.75; /* leading-7 */
+    color: #e2e8f0; /* text-gray-600 */
+    text-align: justify !important;
+}
+#course-instructor-section .staff-title {
+    font-size: 1rem; /* text-base */
+    line-height: 1.75; /* leading-7 */
+    color: #cbd5e1; /* text-gray-600 */
+}
+
+#course-instructor-section .staff-name {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 700; /* font-semibold */
+    line-height: 2; /* leading-8 */
+    letter-spacing: 0.0125em; /* tracking-tight */
+    color: #f1f5f9; /* text-gray-900 */ 
+}
+
+#course-instructor-section {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    display: grid;
+    max-width: 30rem;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 5rem;
+  }
+  
+  @media (min-width: 640px) { /* sm */
+    #course-instructor-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) { /* lg */
+    #course-instructor-section {
+      max-width: 64rem;
+      column-gap: 2rem;
+    }
+  }
+  
+  @media (min-width: 1280px) { /* xl */
+    #course-instructor-section {
+      max-width: none;
+    }
+  }
+  
+
+  #course-instructor-section li {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1280px) { /* xl */
+    #course-instructor-section li {
+      flex-direction: row;
+    }
+  }
+  
+
+#course-instructor-section img {
+    aspect-ratio: 4/5 !important;
+    width: 13rem/* 208px */ !important;
+    flex: none !important;
+    border-radius: 1rem/* 16px */ !important;
+    object-fit: cover !important;    
+}
+
+#course-instructor-section .staff-info {
+    flex: 1 1 auto;
+}

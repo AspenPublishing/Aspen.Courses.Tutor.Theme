@@ -42,8 +42,9 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
   </script>
 % endif
 
+% if user.is_authenticated:
 <header class="global-header ${'slim' if course else ''}">
-    <div class="header-container">
+    <div class="header-container max-w-7xl">
     % if settings.FEATURES.get('ENABLE_COOKIE_POLICY_BANNER', use_cookie_banner):
         ${static.renderReact(
             component="CookiePolicyBanner",
@@ -68,7 +69,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
     <div class="mobile-menu hidden" aria-label=${_("More Options")} role="menu" id="mobile-menu"></div>
     </div>
 </header>
-
+% endif
 % if course:
 <!--[if lte IE 9]>
 <div class="ie-banner" aria-hidden="true">${Text(_('{begin_strong}Warning:{end_strong} Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.')).format(

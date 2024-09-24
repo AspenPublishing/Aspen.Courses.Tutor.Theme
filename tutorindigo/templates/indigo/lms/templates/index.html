@@ -9,10 +9,10 @@ from openedx.core.djangolib.markup import HTML, Text
 %>
 
 <main id="main" aria-label="Content" tabindex="-1">
-    <section class="home style-logout">
+    <section class="">
       <header>
         <div class="outer-wrapper">
-          <div class="title">
+          <div class="title" style="margin-top: -100px;">
             <div class="heading-group">
               % if homepage_overlay_html:
                 ${homepage_overlay_html | n, decode.utf8}
@@ -47,7 +47,9 @@ from openedx.core.djangolib.markup import HTML, Text
         </div>
 
       </header>
-      <%include file="${courses_list}" />
+      % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+        <%include file="${courses_list}" />
+      % endif
 
     </section>
 </main>
