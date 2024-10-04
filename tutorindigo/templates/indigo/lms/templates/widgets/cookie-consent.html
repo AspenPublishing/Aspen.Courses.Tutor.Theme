@@ -15,47 +15,90 @@ cookie_policy_cookie_domain = getattr(settings, 'COOKIE_POLICY_COOKIE_DOMAIN', N
 cookie_policy_cookie_config = {"name": cookie_policy_cookie_name}
 if cookie_policy_cookie_domain:
   cookie_policy_cookie_config["domain"] = cookie_policy_cookie_domain
-
-classes = ""  # Define the classes variable
 %>
- 
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
+
+<div id="cookie-consent" class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" style="display: none;" role="dialog" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-description">
+  <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
+    <h2 id="cookie-consent-title" class="sr-only">Cookie Consent</h2>
+    <p id="cookie-consent-description" class="text-sm leading-6 text-gray-900">
+      We use cookies on this site to enhance your user experience. By using this website, you accept this use. Learn more about it in <a href="/privacy" class="font-semibold text-indigo-600 underline" aria-label="View cookie policy (opens in a new tab)" target="_blank" rel="noopener noreferrer">Cookie policy</a>.
+    </p>
+    <div class="mt-4 flex items-center gap-x-5">
+      <button type="button" id="accept-cookies" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" aria-label="Accept all cookies">
+        Accept all
+      </button>
+    </div>
+  </div>
+</div>
 
 <script>
 window.addEventListener("load", function() {
-  window.cookieconsent.initialise({
-    "window": '<div dir="${static.dir_rtl()}" role="dialog" tabindex="-1" id="cookiepopup" aria-label="cookieconsent" class="cc-window ${classes}"><!--googleoff: all--><!--googleon: all--></div>',
-    "content": {
-      "message": `
-        ${_("We use cookies on this site to enhance your user experience. By using this website, you accept this use.")}
-        ${Text(_("Learn more about it in {link_start}Cookie Policy{link_end}.")).format(link_start=HTML("<a href='/cookies'>"), link_end=HTML("</a>"))} <br>
-        ${_("For a complete overview of all cookies used, please see your personal settings.")}
-      `,
-      "dismiss": "×",
-      "allow": "allow cookies",
-      "link": null,
-    },
-    "theme": false,
-    "elements": {
-        "dismiss": '<a aria-label="dismiss cookie message" id="dismiss" role=button tabindex="0" class="cc-btn cc-dismiss:focus">{{dismiss}}</a>',
-    },
-    "position": "bottom",
-    "cookie": ${cookie_policy_cookie_config | n, dump_js_escaped_json},
-    "static": "true"
-  },
-  function(popup) {
-    $('.cc-window').on('keydown', function(event) {
-      if (event.keyCode == 27 ){
-        popup.close();
-      } 
-    });
+  var cookieConsent = document.getElementById('cookie-consent');
+  var acceptButton = document.getElementById('accept-cookies');
+  var rejectButton = document.getElementById('reject-cookies');
 
-    $('#dismiss').on('keydown', function(event) {
-      if (event.keyCode == 13 || event.keyCode == 32 ) {
-        popup.onButtonClick(event);
+  function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+  }
+
+  function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  }
+
+  function hideCookieConsent() {
+    cookieConsent.style.display = 'none';
+  }
+
+  function showCookieConsent() {
+    cookieConsent.style.display = 'block';
+    acceptButton.focus();
+  }
+
+  if (!getCookie('${cookie_policy_cookie_name}')) {
+    showCookieConsent();
+  }
+
+  acceptButton.addEventListener('click', function() {
+    setCookie('${cookie_policy_cookie_name}', 'accepted', 365);
+    hideCookieConsent();
+  });
+
+  rejectButton.addEventListener('click', function() {
+    setCookie('${cookie_policy_cookie_name}', 'rejected', 365);
+    hideCookieConsent();
+  });
+
+  // Trap focus within the cookie consent banner
+  cookieConsent.addEventListener('keydown', function(e) {
+    if (e.key === 'Tab' || e.keyCode === 9) {
+      if (e.shiftKey) /* shift + tab */ {
+        if (document.activeElement === acceptButton) {
+          rejectButton.focus();
+          e.preventDefault();
+        }
+      } else /* tab */ {
+        if (document.activeElement === rejectButton) {
+          acceptButton.focus();
+          e.preventDefault();
+        }
       }
-    });  
+    }
+    if (e.key === 'Escape' || e.keyCode === 27) {
+      hideCookieConsent();
+    }
   });
 });
 </script>
