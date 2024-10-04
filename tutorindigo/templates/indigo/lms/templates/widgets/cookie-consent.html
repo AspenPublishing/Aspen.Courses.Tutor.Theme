@@ -1,0 +1,59 @@
+<!-- Cookie Consent -->
+<%page expression_filter="h"/>
+<%!
+from django.conf import settings
+from django.utils.translation import gettext as _
+from openedx.core.djangolib.js_utils import dump_js_escaped_json
+from openedx.core.djangolib.markup import HTML, Text
+%>
+<%namespace name='static' file='../static_content.html'/>
+
+<%
+cookie_policy_cookie_name = getattr(settings, 'COOKIE_POLICY_VIEWED_COOKIE_NAME', 'cookieconsent_status')
+cookie_policy_cookie_domain = getattr(settings, 'COOKIE_POLICY_COOKIE_DOMAIN', None)
+
+cookie_policy_cookie_config = {"name": cookie_policy_cookie_name}
+if cookie_policy_cookie_domain:
+  cookie_policy_cookie_config["domain"] = cookie_policy_cookie_domain
+%>
+ 
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
+
+<script>
+window.addEventListener("load", function() {
+  window.cookieconsent.initialise({
+    "window": '<div dir="${static.dir_rtl()}" role="dialog" tabindex="-1" id="cookiepopup" aria-label="cookieconsent" class="cc-window {{classes}}"><!--googleoff: all-->{{children}}<!--googleon: all--></div>',
+    "content": {
+      "message": `
+        ${_("We use cookies on this site to enhance your user experience. By using this website, you accept this use.")}
+        ${Text(_("Learn more about it in {link_start}Cookie Policy{link_end}.")).format(link_start=HTML("<a href='/cookies'>"), link_end=HTML("</a>"))} <br>
+        ${_("For a complete overview of all cookies used, please see your personal settings.")}
+      `,
+      "dismiss": "×",
+      "allow": "allow cookies",
+      "link": null,
+    },
+    "theme": false,
+    "elements": {
+        "dismiss": '<a aria-label="dismiss cookie message" id="dismiss" role=button tabindex="0" class="cc-btn cc-dismiss:focus">{{dismiss}}</a>',
+    },
+    "position": "bottom",
+    "cookie": ${cookie_policy_cookie_config | n, dump_js_escaped_json},
+    "static": "true"
+  },
+  function(popup) {
+    $('.cc-window').on('keydown', function(event) {
+      if (event.keyCode == 27 ){
+        popup.close();
+      } 
+    });
+
+    $('#dismiss').on('keydown', function(event) {
+      if (event.keyCode == 13 || event.keyCode == 32 ) {
+        popup.onButtonClick(event);
+      }
+    });  
+  });
+});
+</script>
