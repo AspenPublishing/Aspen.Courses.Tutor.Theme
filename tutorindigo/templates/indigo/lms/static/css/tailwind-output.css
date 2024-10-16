@@ -997,7 +997,7 @@ select {
 
 .bg-indigoDark {
   --tw-bg-opacity: 1 !important;
-  background-color: rgb(17 9 6 / var(--tw-bg-opacity)) !important;
+  background-color: rgb(24 24 24 / var(--tw-bg-opacity)) !important;
 }
 
 .bg-indigoPrimary {

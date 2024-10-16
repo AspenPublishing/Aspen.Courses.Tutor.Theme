@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         indigoPrimary: '#bf2d2e',
         indigoSecondary: '#d6ae75',
-        indigoDark: '#110906',
+        indigoDark: '#181818',
       },
     },
   },
