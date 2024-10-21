@@ -128,7 +128,6 @@ COPY indigo/env.config.jsx /openedx/app/
             "mfe-dockerfile-post-npm-install-authn",
             """
 RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#77a3285e2629b742b689faeacb5d237e3572cff4'
-COPY indigo/env.config.jsx /openedx/app/
 """,
         ),
         # Tutor-Indigo v2.1 targets the styling updates in discussions and learner-dashboard MFE
