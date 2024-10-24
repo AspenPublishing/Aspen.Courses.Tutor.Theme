@@ -143,13 +143,3 @@ a {
 #course-instructor-section .staff-info {
     flex: 1 1 auto;
 }
-
-.custom-footer * {
-  all: unset;
-  box-sizing: border-box;
-}
-
-.custom-footer {
-  all: initial;
-  display: block;
-}
