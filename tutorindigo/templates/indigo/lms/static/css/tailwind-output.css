@@ -1238,9 +1238,9 @@ select {
     gap: 2rem !important;
   }
 
-  .lg\:px-24 {
-    padding-left: 6rem !important;
-    padding-right: 6rem !important;
+  .lg\:px-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 
   .lg\:py-56 {
