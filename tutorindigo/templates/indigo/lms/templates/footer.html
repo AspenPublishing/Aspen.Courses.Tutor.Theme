@@ -78,20 +78,19 @@
   </footer>
 </div>
 % else:
-<footer class="relative w-full bg-[#181818]" aria-labelledby="footer-heading">
+<footer class="relative w-full bg-[#181818] py-16" aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
-  <div class="container mx-auto flex justify-between items-start py-8 px-24">
-    <div class="flex flex-col">
+  <div class="container mx-auto flex flex-col lg:flex-row justify-between items-start py-8 px-6 lg:px-24">
+    <div class="flex flex-col mb-8 lg:mb-0">
       <img src="${static.url('images/logo.svg')}" alt="Aspen Publishing Logo" class="w-40 h-auto mb-4">
-      <span class="text-white text-sm">&copy; ${datetime.now().year} ASPEN PUBLISHING</span>
     </div>
 
-    <div class="flex gap-16">
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
       <div class="flex flex-col gap-4 text-white">
         <h3 class="uppercase text-lg font-medium"><a href="https://aspenpublishing.com/pages/discover-jd-next-program" target="_blank" rel="noopener" aria-label="About Us">About Us</a></h3>
         <h3 class="uppercase text-lg font-medium"><a href="https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next" target="_blank" rel="noopener" aria-label="Support">Support</a></h3>
-    </div>
-    <div class="flex flex-col gap-4 text-gray-300">
+      </div>
+      <div class="flex flex-col gap-4 text-gray-300">
         <a href="/tos" class="text-sm" aria-label="Terms of Service">Terms of Service</a>
         <a href="/privacy" class="text-sm" aria-label="Privacy Policy">Privacy Policy</a>
         <a href="/disclosure" class="text-sm" aria-label="California Consumer Act Policy">California Consumer Act Policy</a>
@@ -99,10 +98,10 @@
       </div>
     </div>
   </div>
-  <hr class="my-8 border-t border-yellow-500 mx-24" aria-hidden="true">
-  <div class="container mx-auto flex justify-between items-center px-24 pb-8">
-    <span class="text-gray-300 text-sm">&copy; 2024 ASPEN PUBLISHING</span>
-    <div class="flex gap-8">
+  <hr class="my-8 border-t border-[#D6AE75] mx-6 lg:mx-24" aria-hidden="true">
+  <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center px-6 lg:px-24 pb-8">
+    <span class="text-gray-300 text-sm mb-4 lg:mb-0">&copy; ${datetime.now().year} ASPEN PUBLISHING</span>
+    <div class="flex gap-4 lg:gap-8">
       <a href="https://www.facebook.com/profile.php?id=61555997104704" class="text-gray-300 text-sm" aria-label="Aspen Publishing on Facebook">Facebook</a>
       <a href="https://www.linkedin.com/company/aspenpublishing/" class="text-gray-300 text-sm" aria-label="Aspen Publishing on LinkedIn">LinkedIn</a>
       <a href="https://twitter.com/AspenPublishing" class="text-gray-300 text-sm" aria-label="Aspen Publishing on Twitter">Twitter</a>
