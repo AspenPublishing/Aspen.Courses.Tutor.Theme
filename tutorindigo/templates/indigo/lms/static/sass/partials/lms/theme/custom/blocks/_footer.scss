@@ -1,0 +1,44 @@
+footer.wrapper-footer {
+    padding: 50px 0 10px;
+
+    .footer-nav-list {
+        @include media-breakpoint-down(sm) {
+            flex-wrap: wrap;
+        }
+
+        .footer-nav-item {
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .footer-holder {
+        margin-bottom: 32px;
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .footer-support {
+        left: auto;
+        right: -13px;
+    }
+
+    .footer-logo {
+        right: auto;
+        left: 0;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        color: #8b8686;
+        font-size: 12px;
+
+        p {
+            margin: 0;
+        }
+    }
+}

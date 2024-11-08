@@ -1,0 +1,29 @@
+.xblock {
+    .xblock.xmodule_display.xmodule_VideoBlock .video .subtitles {
+        a,
+        .subtitles-menu li {
+            color: $black;
+        }
+    }
+
+    .xmodule_display.xmodule_ProblemBlock div.problem .choicegroup label {
+        font-size: 18px;
+    }
+}
+
+.wrap-instructor-info a.instructor-info-action:not(.btn) {
+    color: $base-color;
+
+    &:hover {
+        background: $base-color;
+    }
+}
+
+.pdf-download-button a:not(.btn) {
+    color: $base-color;
+
+    &:hover,
+    &:focus {
+        color: $base-color;
+    }
+}
