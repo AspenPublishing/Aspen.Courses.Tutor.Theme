@@ -1,0 +1,78 @@
+<%page expression_filter="h"/>
+<%!
+from django.utils.translation import ugettext as _
+from openedx.core.djangoapps.site_configuration import helpers
+from openedx.core.djangolib.markup import HTML, Text
+%>
+
+<%def name="html_data()"><%
+data = {
+  "footerIcons": {
+    "twitter": {
+      "href": "https://twitter.com/AspenPublishing",
+      "src": "ico-twitter-x-circle"
+    },
+    "linkedin": {
+      "href": "https://www.linkedin.com/company/aspenpublishing/",
+      "src": "ico-linkedin"
+    },
+    "youtube": {
+      "href": "https://www.youtube.com/@aspenpublishing6830",
+      "src": "ico-youtube"
+    },
+    "facebook": {
+      "href": "https://www.facebook.com/profile.php?id=61555997104704",
+      "src": "ico-facebook"
+    }
+},
+  "footerLinks": {
+    "about": {
+      "order": 1,
+      "url": "https://aspenpublishing.com/pages/jdnext",
+      "text": Text(_('About Us')),
+      "target_blank": True
+    },
+    "support": {
+      "order": 2,
+      "url": "https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next",
+      "text": Text(_('Support')),
+      "target_blank": True
+    },
+    "license-agreement": {
+      "order": 3,
+      "url": "/agreement",
+      "text": Text(_('End User License Agreement')),
+      "target_blank": False
+    },
+    "terms": {
+      "order": 4,
+      "url": "/tos",
+      "text": Text(_('Terms Of Use')),
+      "target_blank": False
+    },
+    "privacy": {
+      "order": 5,
+      "url": "/privacy",
+      "text": Text(_('Privacy Statement')),
+      "target_blank": False
+    },
+    "california-disclosure": {
+      "order": 6,
+      "url": "disclosure",
+      "text": Text(_('California Disclosure')),
+      "target_blank": False
+    }
+  },
+  "banner": {
+    "title": Text(_("Welcome to Aspen Courses")),
+    "description": ""
+  },
+  "site_variable": settings.FEATURES.get('BASE_NUTMEG_SITE_THEME', settings.DEFAULT_SITE_THEME),
+  "header_logo": "logo.svg",
+  "footer_logo": "logo-footer.svg",
+  "certificate_logo": "logo.svg",
+  "footer_dark": True,
+  "display_created_by_block": False
+}
+return data
+%></%def>
