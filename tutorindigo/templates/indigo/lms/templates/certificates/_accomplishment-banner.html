@@ -1,0 +1,94 @@
+<%page expression_filter="h"/>
+<%!
+from django.utils.translation import ugettext as _
+from openedx.core.djangolib.js_utils import js_escaped_string
+%>
+<%namespace name='static' file='../static_content.html'/>
+<%block name="js_extra">
+  <%static:js group='certificates_wv'/>
+  <script type="text/javascript">
+      $(document).ready(function() {
+          FaceBook.init({"facebook_app_id": '${facebook_app_id | n, js_escaped_string}'});
+          $.ajaxSetup({
+              headers: {
+                  'X-CSRFToken': $.cookie('csrftoken')
+              },
+              dataType: 'json'
+          });
+          $(".action-linkedin-profile").click(function() {
+              var data = {
+                  user_id: '${accomplishment_user_id | n, js_escaped_string}',
+                  course_id: $(this).data('course-id'),
+                  enrollment_mode: $(this).data('certificate-mode'),
+                  certificate_id: '${certificate_id_number | n, js_escaped_string}',
+                  certificate_url: window.location.href,
+                  social_network: 'LinkedIn'
+              };
+              Logger.log('edx.certificate.shared', data);
+              window.open('${linked_in_url | n, js_escaped_string}', '', 'noopener');
+          });
+      });
+
+      function popupWindow(url, title, width, height) {
+          // popup a window at center of the screen.
+          var left = (screen.width/2)-(width/2);
+          var top = (screen.height/2)-(height/2);
+          var popupWindow = window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width='+width+', height='+height+', top='+top+', left='+left);
+          popupWindow.opener = null;
+          return popupWindow;
+      }
+  </script>
+</%block>
+<div id="fb-root"></div>
+<div class="wrapper-banner wrapper-banner-user">
+    <section class="banner banner-user">
+        <div class="message message-block message-notice">
+            <h2 class="message-title hd-5 emphasized">${accomplishment_banner_opening}</h2>
+            <div class="wrapper-copy-and-actions">
+                <p class="message-copy copy copy-base emphasized">${accomplishment_banner_congrats}</p>
+                <div class="message-actions">
+                    <h3 class="sr-only">${_("Print or share your certificate:")}</h3>
+                    % if facebook_share_enabled:
+                      <button class="action action-share-facebook btn-inverse btn-small icon-only" id="action-share-facebook"
+                        ## xss-lint: disable=mako-invalid-html-filter
+                        onclick="FaceBook.share({share_link: '${share_url | n, js_escaped_string}'});">
+                          <span class="icon fa fa-facebook-official" aria-hidden="true"></span>
+                          <span class="action-label">${_("Post on Facebook")}</span>
+                      </button>
+                    %endif
+                    % if twitter_share_enabled:
+                      <button data-tooltip="${_('Share on Twitter')}"
+                        class="action action-share-twitter btn-inverse btn-small icon-only"
+                        title="${_('Share on Twitter')}"
+                        ## xss-lint: disable=mako-invalid-html-filter
+                        onclick="popupWindow('${twitter_url | n, js_escaped_string}', 'tweetWindow', 640, 480); return false;">
+                          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 0.5C2.24219 0.5 0 2.74219 0 5.5V30.5C0 33.2578 2.24219 35.5 5 35.5H30C32.7578 35.5 35 33.2578 35 30.5V5.5C35 2.74219 32.7578 0.5 30 0.5H5ZM28.2109 7.0625L20.1016 16.3281L29.6406 28.9375H22.1719L16.3281 21.2891L9.63281 28.9375H5.92188L14.5938 19.0234L5.44531 7.0625H13.1016L18.3906 14.0547L24.5 7.0625H28.2109ZM25.2578 26.7188L11.9844 9.16406H9.77344L23.1953 26.7188H25.2578Z" fill="currentcolor"/>
+                          </svg>
+                          <span class="action-label">${_("Tweet this Accomplishment. Pop up window.")}</span>
+                      </button>
+                    %endif
+
+                    %if linked_in_url:
+                    <button class="action action-linkedin-profile btn-inverse btn-small icon-only" id="action-share-linkedin" title="${_('Add to LinkedIn Profile')}" data-course-id="${course_id}" data-certificate-mode="${course_mode}">
+                        <span class="icon fa fa-linkedin" aria-hidden="true"></span>
+                        <span class="action-label">${_("Add to LinkedIn Profile")}</span>
+                    </button>
+                    %endif
+
+                    %if badge:
+                    <button class="action action-share-mozillaopenbadges btn btn-overlay btn-small">
+                        <img class="icon icon-mozillaopenbadges" src="/static/certificates/images/ico-mozillaopenbadges.png" alt="Mozilla Open Badges Backpack">
+                        ${_("Add to Mozilla Backpack")}
+                    </button>
+                    %endif
+
+                    <button class="action action-print btn-inverse btn-small" id="action-print-view">
+                        <span class="icon fa fa-print" aria-hidden="true"></span>
+                        ${_("Print Certificate")}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
