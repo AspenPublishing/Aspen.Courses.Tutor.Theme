@@ -111,7 +111,7 @@ hooks.Filters.ENV_PATCHES.add_items(
             """
 RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#2aa6279d8a0ab2f1b87c4515e762d1032ebf65a9'
 RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#48a1a3cd59ebd469c1ad98a12adc10c4861d7b08'
-RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+RUN npm install '@edx/frontend-component-footer@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-footer#c778838fce89744abedb65bfb38b703d193868ed'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
@@ -129,7 +129,7 @@ RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses
             """
 RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#2aa6279d8a0ab2f1b87c4515e762d1032ebf65a9'
 RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#48a1a3cd59ebd469c1ad98a12adc10c4861d7b08'
-RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+RUN npm install '@edx/frontend-component-footer@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-footer#c778838fce89744abedb65bfb38b703d193868ed'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
@@ -138,7 +138,7 @@ COPY indigo/env.config.jsx /openedx/app/
             "mfe-dockerfile-post-npm-install-learner-dashboard",
             """
 RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#2aa6279d8a0ab2f1b87c4515e762d1032ebf65a9'
-RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+RUN npm install '@edx/frontend-component-footer@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-footer#c778838fce89744abedb65bfb38b703d193868ed'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
@@ -148,7 +148,7 @@ COPY indigo/env.config.jsx /openedx/app/
             """
 RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#2aa6279d8a0ab2f1b87c4515e762d1032ebf65a9'
 RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#48a1a3cd59ebd469c1ad98a12adc10c4861d7b08'
-RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+RUN npm install '@edx/frontend-component-footer@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-footer#c778838fce89744abedb65bfb38b703d193868ed'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
@@ -158,7 +158,7 @@ COPY indigo/env.config.jsx /openedx/app/
             """
 RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#2aa6279d8a0ab2f1b87c4515e762d1032ebf65a9'
 RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#48a1a3cd59ebd469c1ad98a12adc10c4861d7b08'
-RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+RUN npm install '@edx/frontend-component-footer@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-footer#c778838fce89744abedb65bfb38b703d193868ed'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
