@@ -1,0 +1,203 @@
+<%namespace name='static' file='../static_content.html'/>
+<%page expression_filter="h"/>
+<%! from django.utils.translation import gettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Additional Information for California Residents")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>
+            <%block name="pageheader">${page_header or _("Additional Information for California Residents")}</%block>
+        </h1>
+        <p>
+            <section class="container about" style="text-align: justify;">
+                <p class="p2">Pursuant to California law, we are providing additional information to California residents.&nbsp; Please read this information together with our&nbsp;<a href="https://www.aspenpublishing.com/privacy-statement/privacy-policy"><span class="s1">Privacy &amp; Cookie Notice</span></a>.</p>
+            <p class="p3">Under California law, certain organizations need to disclose whether the following categories of “personal information” are collected or disclosed for an organization’s “business purpose” as those terms are defined under California law.&nbsp; Below please find the categories of personal information about California residents that we collect or disclose to third parties or service providers. Note that while a category may be included below that does not necessarily mean that we have or collect information in that category about you. The personal information we collect depends on the nature of our interaction with you and the Services you may use.&nbsp; For example, while we collect credit card numbers for customers who purchase certain solutions, we do not collect or transfer credit card numbers of individuals that submit questions on our website’s “contact us” page. &nbsp;We do not sell personal information.&nbsp;</p>
+            <p class="p3">&nbsp;</p>
+            <table class="t1" style="border-collapse: collapse; width: 100%;" border="1" cellspacing="1" cellpadding="1">
+            <tbody>
+            <tr>
+            <td class="td1" style="width: 51.484%;" valign="top">
+            <h3 class="p4" style="text-align: center;"><strong>Category of personal information collected</strong></h3>
+            </td>
+            <td class="td2" style="width: 48.516%;" valign="top">
+            <h3 class="p4" style="text-align: center;"><strong>Categories of third parties to whom we disclose personal information for a business purpose</strong></h3>
+            </td>
+            </tr>
+            <tr>
+            <td class="td3" style="width: 51.484%;" valign="top">
+            <p class="p5">&nbsp; Identifiers such as a real name, alias, postal address, unique personal identifier, online identifier, internet protocol address, email address, account name, social security number, driver’s license number, passport number, or other similar identifiers.*</p>
+            </td>
+            <td class="td4" style="width: 48.516%;" valign="top">
+            <ul class="ul1">
+            <li class="li5">Our affiliates or subsidiaries</li>
+            <li class="li5">Our service providers</li>
+            <li class="li5">Product and service fulfillment companies</li>
+            <li class="li5">Subscribing, accrediting or professional organizations</li>
+            <li class="li5">Government authorities and regulators</li>
+            </ul>
+            </td>
+            </tr>
+            <tr>
+            <td class="td5" style="width: 51.484%;" valign="top">
+            <p class="p5">&nbsp; Financial information such as credit card number, debit card number or bank account number</p>
+            </td>
+            <td class="td6" style="width: 48.516%;" valign="top">
+            <ul class="ul1">
+            <li class="li5">Our affiliates or subsidiaries</li>
+            <li class="li5">Our service providers</li>
+            <li class="li5">Payment processors and banks</li>
+            </ul>
+            </td>
+            </tr>
+            <tr>
+            <td class="td5" style="width: 51.484%;" valign="top">
+            <p class="p5">&nbsp; Characteristics of protected classifications under California or federal law</p>
+            </td>
+            <td class="td6" style="width: 48.516%;" valign="top">
+            <ul class="ul1">
+            <li class="li5">Our affiliates or subsidiaries</li>
+            <li class="li5">Our service providers</li>
+            <li class="li5">Government authorities and regulators</li>
+            </ul>
+            </td>
+            </tr>
+            <tr>
+            <td class="td7" style="width: 51.484%;" valign="top">
+            <p class="p5">&nbsp; Commercial information, including records of personal property, products or services purchased, obtained, or considered, or other purchasing or consuming histories or tendencies.</p>
+            </td>
+            <td class="td8" style="width: 48.516%;" valign="top">
+            <ul class="ul1">
+            <li class="li5">Our affiliates or subsidiaries</li>
+            <li class="li5">Our service providers</li>
+            <li class="li5">Product and service fulfillment companies</li>
+            <li class="li5">Subscribing, accrediting or professional organizations</li>
+            </ul>
+            </td>
+            </tr>
+            <tr>
+            <td class="td7" style="width: 51.484%;" valign="top">
+            <p class="p5">&nbsp; Internet or other electronic network activity information, including, but not limited to, browsing history, search history, and information regarding a consumer’s interaction with an Internet website, application, or advertisement.</p>
+            </td>
+            <td class="td8" style="width: 48.516%;" valign="top">
+            <ul class="ul1">
+            <li class="li5">Our affiliates or subsidiaries</li>
+            <li class="li5">Our service providers</li>
+            <li class="li5">Product and service fulfillment companies</li>
+            <li class="li5">Subscribing, accrediting or professional organizations</li>
+            </ul>
+            </td>
+            </tr>
+            <tr>
+            <td class="td5" style="width: 51.484%;" valign="top">
+            <p class="p5">&nbsp; Geolocation data</p>
+            </td>
+            <td class="td6" style="width: 48.516%;" valign="top">
+            <ul class="ul1">
+            <li class="li5">Our affiliates or subsidiaries</li>
+            <li class="li5">Our service providers</li>
+            <li class="li5">Product and service fulfillment companies</li>
+            </ul>
+            </td>
+            </tr>
+            <tr>
+            <td class="td3" style="width: 51.484%;" valign="top">
+            <p class="p5">&nbsp; Audio, electronic, visual, thermal, olfactory, or similar information.</p>
+            </td>
+            <td class="td4" style="width: 48.516%;" valign="top">
+            <ul class="ul1">
+            <li class="li5">Our affiliates or subsidiaries</li>
+            <li class="li5">Our service providers</li>
+            <li class="li5">Product and service fulfillment companies</li>
+            <li class="li5">Subscribing, accrediting or professional organizations</li>
+            <li class="li5">Government authorities and regulators</li>
+            </ul>
+            </td>
+            </tr>
+            <tr>
+            <td class="td7" style="width: 51.484%;" valign="top">
+            <p class="p5">&nbsp; Professional or employment-related information</p>
+            </td>
+            <td class="td8" style="width: 48.516%;" valign="top">
+            <ul class="ul1">
+            <li class="li5">Our affiliates or subsidiaries</li>
+            <li class="li5">Our service providers</li>
+            <li class="li5">Product and service fulfillment companies</li>
+            <li class="li5">Subscribing, accrediting or professional organizations</li>
+            </ul>
+            </td>
+            </tr>
+            <tr>
+            <td class="td7" style="width: 51.484%;" valign="top">
+            <p class="p5">&nbsp; Education information, defined as information that is not publicly available personally identifiable information as defined in the Family Educational Rights and Privacy Act (20 U.S.C. section 1232g, 34 C.F.R. Part 99).</p>
+            </td>
+            <td class="td8" style="width: 48.516%;" valign="top">
+            <ul class="ul1">
+            <li class="li5">Our affiliates or subsidiaries</li>
+            <li class="li5">Our service providers</li>
+            <li class="li5">Product and service fulfillment companies</li>
+            <li class="li5">Subscribing, accrediting or professional organizations</li>
+            </ul>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <p class="p6">&nbsp;</p>
+            <p class="p7">We and our third-party service providers collect personal information from the following sources:</p>
+            <ul class="ul1">
+            <li class="li8"><span class="s3"><strong>Direct interactions,&nbsp;</strong>such as, when you register for our Services or make a purchase</span></li>
+            <li class="li8"><span class="s3"><strong>Data from third parties,&nbsp;</strong>such as, information on third-party websites or other information you may have made publicly available or information provided by third party sources, including but not limited to government entities and data resellers</span></li>
+            <li class="li9"><span class="s3"><strong>Automated tracking technologies</strong>, such as, information automatically collected about your interaction with our Services and websites</span><span class="s4">&nbsp;</span><span class="s3">using various technologies such as cookies, web logs and beacons and internet tags</span></li>
+            </ul>
+            <p class="p7">Depending on how you interact with us and our Services, we may use and disclose personal information for the following business purposes:</p>
+            <ul class="ul1">
+            <li class="li8"><span class="s3">Auditing</span></li>
+            <li class="li8"><span class="s3">Detecting security incidents, protecting against malicious, deceptive, fraudulent, or illegal activity,</span></li>
+            <li class="li8"><span class="s3">Detecting and repairing errors,</span></li>
+            <li class="li8"><span class="s3">Performing services on behalf of other businesses,</span></li>
+            <li class="li8"><span class="s3">Processing or fulfilling orders and transactions,</span></li>
+            <li class="li8"><span class="s3">Processing payments,</span></li>
+            <li class="li8"><span class="s3">Providing advertising or marketing,</span></li>
+            <li class="li8"><span class="s3">Conducting internal research for product and service development, and</span></li>
+            <li class="li8"><span class="s3">Improving, upgrading, and enhancing our services.</span></li>
+            </ul>
+            <p class="p7">&nbsp;</p>
+            <p class="p10">In addition to sharing personal information for the business purposes identified within the California Consumer Privacy Act, we also share personal information as needed, or required, with the following additional third parties:</p>
+            <ul class="ul1">
+            <li class="li8"><span class="s3"><strong>organizations involved in business transfers,&nbsp;</strong>e.g. to a purchaser or successor entity in the event of a sale or any other corporate transaction involving some or all of our business;</span></li>
+            <li class="li8"><span class="s3"><strong>other parties,&nbsp;</strong>e.g. as needed for external audit, compliance, risk management, corporate development and/or corporate governance related matters,</span></li>
+            <li class="li8"><span class="s3"><strong>business partners</strong>&nbsp;as directed by an individual, or as needed to process an individual’s request; and</span></li>
+            <li class="li8"><span class="s3"><strong>governmental authorities and regulators,&nbsp;</strong>as required under applicable law.</span></li>
+            </ul>
+            <p class="p11"><strong>&nbsp;</strong></p>
+            <p class="p12"><span style="text-decoration: underline;"><span class="s5">Shine the Light law</span></span><em><span style="text-decoration: underline;">.</span><span class="Apple-converted-space">&nbsp; </span></em>Pursuant to California Civil Code Section 1798.83, we will not disclose or share your personal information with third parties for the purposes of third-party marketing to you without your prior consent.<em> </em></p>
+            <p class="p12"><span style="text-decoration: underline;"><span class="s5">Do Not Track Signals</span></span><em><span style="text-decoration: underline;">.</span> </em>Other than as disclosed in this disclosure, our Services do not operate any differently when it receives Do Not Track signals from your internet web browser.</p>
+            <p class="p12"><span style="text-decoration: underline;"><span class="s5">WE DO NOT SELL OR SHARE YOUR PERSONAL INFORMATION</span></span><em><span style="text-decoration: underline;">.</span> </em>If we ever decide to “sell” or “share” personal information, as those terms are defined under the CCPA (as defined below), we will update you via this disclosure and include a link entitled “Do Not Sell or Share My Personal Information,” to provide you with an opportunity to opt out of the selling or sharing of your personal information.</p>
+            <p class="p12"><span style="text-decoration: underline;"><span class="s5">California Consumer Rights</span></span></p>
+            <p class="p12">If you are a California consumer, as defined by the California Consumer Privacy Act of 2018, as amended by the California Privacy Rights Act of 2020 (the “CCPA”), you may be afforded additional rights with respect to your personal information.<span class="Apple-converted-space">&nbsp; </span>Any Personal Information we collect is collected for the commercial purpose of effectively providing our services to you, as well as enabling you to learn more about, and benefit from, our services.<span class="Apple-converted-space">&nbsp; </span>Subject to certain exceptions, you may exercise each of your rights as identified below, subject to our verification of your identity.</p>
+            <ol class="ol1">
+            <li class="li13"><span style="text-decoration: underline;"><span class="s6"><em>Access</em></span></span><span class="s3"><span style="text-decoration: underline;">.</span><span class="Apple-converted-space">&nbsp; </span>You have the right to request that we disclose certain information to you about our collection, use and disclosure of your personal information over the past twelve (12) months. Any disclosures we provide will only cover the 12-month period preceding the receipt of your request. The response we provide will also explain the reasons we cannot comply with a request, if applicable. </span></li>
+            <li class="li13"><span style="text-decoration: underline;"><span class="s6"><em>Correction</em></span></span><span class="s3"><span style="text-decoration: underline;">.</span><span class="Apple-converted-space">&nbsp; </span>You can correct what personal information our database currently contains by accessing your account directly, or by contacting us to request that we correct or rectify any personal information that you have provided to us. </span></li>
+            <li class="li13"><span style="text-decoration: underline;"><span class="s6"><em>Limit Use and Disclosure of Sensitive Personal Information</em></span></span><span class="s3"><span style="text-decoration: underline;">.</span> If we collect any sensitive personal information, you have the right to request that we limit the use of the sensitive personal information to that use which is necessary to perform the services or provide the goods reasonably expected by an average consumer who requests those goods or services.</span></li>
+            <li class="li13"><span style="text-decoration: underline;"><span class="s6"><em>Portability</em></span></span><span class="s3"><span style="text-decoration: underline;">.</span><span class="Apple-converted-space">&nbsp; </span>Upon request and when possible, we can provide you with copies of your personal information.<span class="Apple-converted-space">&nbsp; </span>When such a request cannot be honored, we will advise you accordingly.<span class="Apple-converted-space">&nbsp; </span>You can then choose to exercise any other rights under this section.</span></li>
+            <li class="li13"><span style="text-decoration: underline;"><span class="s6"><em>Deletion</em></span></span><span class="s3"><span style="text-decoration: underline;">.</span><span class="Apple-converted-space">&nbsp; </span>You have the right to request that we delete any of your personal information, subject to certain exceptions. Once we receive and confirm your verifiable consumer request, we will delete (and direct our service providers to delete) your personal information from our records, unless an exception applies.<span class="Apple-converted-space">&nbsp; </span>Where applicable, we <span style="text-decoration: underline;">will ensure such changes are shared with trusted third parties.</span></span></li>
+            <li class="li13"><span style="text-decoration: underline;"><span class="s6"><em>Opt-out of Processing</em></span></span><span class="s3"><span style="text-decoration: underline;">. </span>You have the right to request that we do not sell your Personal Information, use your personal information for Targeted Advertising, or use your personal information for profiling. Where applicable, we will ensure such changes are shared with trusted third parties.</span></li>
+            <li class="li13"><span style="text-decoration: underline;"><span class="s6"><em>Non-Discrimination</em></span></span><span class="s3"><span style="text-decoration: underline;">. </span>If a California consumer exercises his or her rights under the CCPA, we shall not discriminate against that consumer by denying our goods or services, charging different prices or rates to similarly situated consumers, providing a different level or quality of our goods or services, or taking any other adverse action. </span></li>
+            <li class="li13"><span style="text-decoration: underline;"><span class="s6"><em>Exercising your rights</em></span></span><span class="s3"><span style="text-decoration: underline;">.</span> If you are California consumer who chooses to exercise the rights listed above, you can: </span></li>
+            </ol>
+            <ol class="ol2">
+            <li class="li13"><span class="s3">By Phone: 1-800-317-3113</span></li>
+            <li class="li14"><span class="s8">By Email:&nbsp;<a href="mailto:support@aspenpublishing.com"><span class="s1">support@aspenpublishing.com</span></a></span></li>
+            </ol>
+            <p class="p12">Only you, or someone legally authorized to act on your behalf, may make a request related to your Personal Information.<span class="Apple-converted-space">&nbsp; </span>If an authorized agent makes a request on your behalf, we may require proof that you gave the agent permission to submit the request.<span class="Apple-converted-space">&nbsp; &nbsp;</span></p>
+            <p class="p12"><span style="text-decoration: underline;"><span class="s5">Responding to Your Request</span>.</span> Upon receiving your request, we will confirm receipt of your request by sending you an email confirming receipt. When you submit your request, we will take steps to attempt to verify your identity. We will seek to match the information in your request to the personal information we maintain about you. As part of our verification process, we may ask you to submit additional information, use identity verification services to assist us, or if you have set up an account on our website, we may ask you to sign in to your account as part of our identity verification process. Please understand that, depending on the type of request you submit, to protect the privacy and security of your personal information, we will only complete your request when we are satisfied that we have verified your identity to a reasonable degree of certainty. In some instances, such as a request to delete personal information, we may first separately confirm that you would like for us to in fact delete your Personal Information before acting on your request.</p>
+            <p class="p12">We will respond to your request within forty-five (45) days. If we require more time, we will inform you of the reason and extension period in writing.</p>
+            <p class="p12">In some cases our ability to uphold these rights for you may depend upon our obligations to process Personal Information for security, safety, fraud prevention reasons, compliance with regulatory or legal requirements, or because processing is necessary to deliver the services you have requested. Where this is the case, we will inform you of specific details in response to your request.</p>
+            <p class="p15"><strong>We do not discriminate against individuals who exercise their rights under applicable law.&nbsp;</strong></p>
+            <p class="p2">If we receive a request from an authorized agent, we have the right to verify with the data subject that the data subject indeed wants to take the action requested by the agent and will do so by contacting the data subject directly.</p>
+            <p class="p2">Effective&nbsp;September 21, 2023.</p>
+            </section>
+        </p>
+    </section>
+</main>
