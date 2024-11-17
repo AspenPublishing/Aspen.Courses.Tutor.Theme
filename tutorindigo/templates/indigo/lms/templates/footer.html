@@ -14,9 +14,9 @@
 
 <footer class="relative w-full bg-181818 py-8" aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
-  <div class="mx-auto flex flex-col lg:flex-row justify-between items-start py-8 px-6 lg:px-0 container-xl">
+  <div class="mx-auto flex flex-col lg:flex-row justify-between items-start py-8 px-6 lg:px-0 container-xl" style="max-width: 1600px;">
     <div class="flex flex-col mb-8 lg:mb-0">
-      <img src={getConfig().LOGO_WHITE_URL} alt="Aspen Publishing Logo" class="w-40 h-auto mb-4" />
+      <img src="${static.url('images/logo-white.svg')}" alt="Aspen Publishing Logo" class="w-40 h-auto mb-4" />
     </div>
 
     <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
@@ -36,9 +36,9 @@
       </div>
     </div>
   </div>
-  <hr class="my-8 border-t border-d6ae75 mx-6 lg:mx-24 container-xl mx-auto" aria-hidden="true" />
-  <div class="mx-auto flex flex-col lg:flex-row justify-between items-center px-6 lg:px-0 py-8 container-xl">
-    <span class="text-gray-300 text-sm mb-4 lg:mb-0">&copy; {currentYear} ASPEN PUBLISHING</span>
+  <hr class="my-8 border-t border-d6ae75 mx-6 lg:mx-24 container-xl mx-auto" aria-hidden="true" style="max-width: 1600px;" />
+  <div class="mx-auto flex flex-col lg:flex-row justify-between items-center px-6 lg:px-0 py-8 container-xl" style="max-width: 1600px;">
+    <span class="text-gray-300 text-sm mb-4 lg:mb-0">&copy; ${datetime.now().year} ASPEN PUBLISHING</span>
     <div class="flex gap-4 lg:gap-8">
       <a href="https://www.facebook.com/profile.php?id=61555997104704" class="text-gray-300 text-sm">Facebook</a>
       <a href="https://www.linkedin.com/company/aspenpublishing/" class="text-gray-300 text-sm">LinkedIn</a>

@@ -133,3 +133,87 @@ body.indigo-dark-theme {
 
     }
 }
+
+
+// Aspen footer CSS
+/* Utility classes */
+.relative { position: relative; }
+.w-full { width: 100%; }
+.bg-181818 { background-color: #181818; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.mx-auto { margin-left: auto; margin-right: auto; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.justify-between { justify-content: space-between; }
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.w-40 { width: 10rem; }
+.h-auto { height: auto; }
+.mb-4 { margin-bottom: 1rem; }
+.gap-8 { gap: 2rem; }
+.gap-4 { gap: 1rem; }
+.text-white { color: #ffffff; }
+.uppercase { text-transform: uppercase; }
+.text-lg { font-size: 1.125rem; }
+.font-medium { font-weight: 500; }
+.text-gray-300 { color: #D1D5DB; }
+.text-sm { font-size: 0.875rem; }
+.my-8 { margin-top: 2rem; margin-bottom: 2rem; }
+.border-t { border-top-width: 1px; }
+.border-d6ae75 { border-color: #D6AE75; }
+.mx-6 { margin-left: 1.5rem; margin-right: 1.5rem; }
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Large screen styles */
+@media (min-width: 1024px) {
+  .lg\:flex-row { flex-direction: row; }
+  .lg\:px-0 { padding-left: 0; padding-right: 0; }
+  .lg\:mb-0 { margin-bottom: 0; }
+  .lg\:gap-16 { gap: 4rem; }
+  .lg\:gap-8 { gap: 2rem; }
+  .lg\:mx-24 { margin-left: 6rem; margin-right: 6rem; }
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Override inherited anchor styles */
+.footer a {
+  background-color: initial;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Specific link colors */
+.text-gray-300 a,
+a.text-gray-300 {
+  color: #D1D5DB !important;
+}
+
+.text-white a,
+a.text-white {
+  color: #ffffff !important;
+}
+
+
