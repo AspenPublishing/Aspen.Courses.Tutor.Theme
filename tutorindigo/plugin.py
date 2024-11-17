@@ -109,8 +109,8 @@ hooks.Filters.ENV_PATCHES.add_items(
         (
             "mfe-dockerfile-post-npm-install-learning",
             """
-RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#f79accdc369d3bb1e3a0b43b06ed7ff5f8964aa0'
-RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#48a1a3cd59ebd469c1ad98a12adc10c4861d7b08'
+RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#e9b150dbd608dc73aba61672d70f3dc294f21814'
+RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#7614bb26ff5619f160179ed0ff68bdff435f4c75'
 RUN npm install '@edx/frontend-component-footer@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-footer#e3c2e5606d42ee7a5a56099d3eb314112632cb0e'
 
 COPY indigo/env.config.jsx /openedx/app/
@@ -119,7 +119,7 @@ COPY indigo/env.config.jsx /openedx/app/
         (
             "mfe-dockerfile-post-npm-install-authn",
             """
-RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#f79accdc369d3bb1e3a0b43b06ed7ff5f8964aa0'
+RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#e9b150dbd608dc73aba61672d70f3dc294f21814'
 """,
         ),
         # Tutor-Indigo v2.1 targets the styling updates in discussions and learner-dashboard MFE
@@ -127,8 +127,8 @@ RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses
         (
             "mfe-dockerfile-post-npm-install-discussions",
             """
-RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#f79accdc369d3bb1e3a0b43b06ed7ff5f8964aa0'
-RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#48a1a3cd59ebd469c1ad98a12adc10c4861d7b08'
+RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#e9b150dbd608dc73aba61672d70f3dc294f21814'
+RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#7614bb26ff5619f160179ed0ff68bdff435f4c75'
 RUN npm install '@edx/frontend-component-footer@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-footer#e3c2e5606d42ee7a5a56099d3eb314112632cb0e'
 
 COPY indigo/env.config.jsx /openedx/app/
@@ -137,7 +137,7 @@ COPY indigo/env.config.jsx /openedx/app/
         (
             "mfe-dockerfile-post-npm-install-learner-dashboard",
             """
-RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#f79accdc369d3bb1e3a0b43b06ed7ff5f8964aa0'
+RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#e9b150dbd608dc73aba61672d70f3dc294f21814'
 RUN npm install '@edx/frontend-component-footer@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-footer#e3c2e5606d42ee7a5a56099d3eb314112632cb0e'
 
 COPY indigo/env.config.jsx /openedx/app/
@@ -146,8 +146,8 @@ COPY indigo/env.config.jsx /openedx/app/
         (
             "mfe-dockerfile-post-npm-install-profile",
             """
-RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#f79accdc369d3bb1e3a0b43b06ed7ff5f8964aa0'
-RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#48a1a3cd59ebd469c1ad98a12adc10c4861d7b08'
+RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#e9b150dbd608dc73aba61672d70f3dc294f21814'
+RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#7614bb26ff5619f160179ed0ff68bdff435f4c75'
 RUN npm install '@edx/frontend-component-footer@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-footer#e3c2e5606d42ee7a5a56099d3eb314112632cb0e'
 
 COPY indigo/env.config.jsx /openedx/app/
@@ -156,8 +156,8 @@ COPY indigo/env.config.jsx /openedx/app/
         (
             "mfe-dockerfile-post-npm-install-account",
             """
-RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#f79accdc369d3bb1e3a0b43b06ed7ff5f8964aa0'
-RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#48a1a3cd59ebd469c1ad98a12adc10c4861d7b08'
+RUN npm install '@edx/brand@git+https://github.com/AspenPublishing/Aspen.Courses.brand-openedx.git#e9b150dbd608dc73aba61672d70f3dc294f21814'
+RUN npm install '@edx/frontend-component-header@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-header#7614bb26ff5619f160179ed0ff68bdff435f4c75'
 RUN npm install '@edx/frontend-component-footer@git+https://github.com/AspenPublishing/Aspen.Courses.frontend-component-footer#e3c2e5606d42ee7a5a56099d3eb314112632cb0e'
 
 COPY indigo/env.config.jsx /openedx/app/
