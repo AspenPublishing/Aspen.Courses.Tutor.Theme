@@ -205,9 +205,10 @@ MFE_CONFIG['INDIGO_ENABLE_DARK_TOGGLE'] = {{ INDIGO_ENABLE_DARK_TOGGLE }}
         (
             "lms-env",
             """
-MKTG_URL_LINK_MAP['AGREEMENT'] = 'agreement'
-MKTG_URL_LINK_MAP['DISCLOSURE'] = 'disclosure'
+MKTG_URL_LINK_MAP:
+  AGREEMENT: agreement
+  DISCLOSURE: disclosure
 """,
-        )
+        ),
     ]
 )

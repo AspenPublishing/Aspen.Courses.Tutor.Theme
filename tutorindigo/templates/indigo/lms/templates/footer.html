@@ -10,143 +10,40 @@
 <% footer = get_footer(is_secure=is_secure) %>
 <% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
 <%namespace name='static' file='static_content.html'/>
-<!-- NEW IN INDIGO update footer -->
-% if uses_bootstrap:
-<div class="wrapper wrapper-footer">
-  <footer id="footer" class="tutor-container"
-    ## When rendering the footer through the branding API,
-    ## the direction may not be set on the parent element,
-    ## so we set it here.
-    % if bidi:
-      dir=${bidi}
-    % endif
-  >
-  <div class="footer-top">
-    <div class="powered-area">
-      ## Please leave this link and use one of the logos provided
-      ## The OpenEdX link may be hidden when this view is served
-      ## through an API to partner sites (such as marketing sites or blogs),
-      ## which are not technically powered by OpenEdX.
-      % if not hide_openedx_link:
-      <ul class="logo-list">
-        <li>Powered by:</li>
-        <li>
-          <a href="https://docs.tutor.edly.io" rel="noopener" target="_blank">
-            <img src="${static.url('images/tutor-logo.png')}" alt="Runs on Tutor" width="57" />
-          </a>
-        </li>
-        <li>
-          <a href="${footer['openedx_link']['url']}" rel="noopener" target="_blank">
-            <img src="${static.url('images/openedx-logo.png')}" alt="${footer['openedx_link']['title']}" width="79" />
-          </a>
-        </li>
-      </ul>
-    </div>
-    {% if INDIGO_FOOTER_NAV_LINKS %}
-    <nav class="nav-colophon" aria-label="${_('About')}">
-      <ol>
-          {% for link in INDIGO_FOOTER_NAV_LINKS %}
-          <li>
-            <a href="{{ link['url'] }}">{{ link['title'] }}</a>
-          </li>
-          {% endfor %}
-      </ol>
-    </nav>
-    {% endif %}
-  </div>
-  <span class="copyright-site">Copyrights ©${datetime.now().year}. All Rights Reserved.</span>
-  % endif
-    <div class="colophon">
 
-      % if context.get('include_language_selector', footer_language_selector_is_enabled()):
-          <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
-      % endif
 
-      ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-        <p class="copyright">${footer['copyright']}
-            % if icp_license_info.get('icp_license'):
-              ${u" | {text}".format(text=icp_license_info.get('text'))}
-              <a href="${icp_license_info.get('icp_license_link', '#')}">
-                  ${u" {icp}".format(icp=icp_license_info.get('icp_license'))}
-              </a>
-            % endif
-        </p>
+<footer class="relative w-full bg-181818 py-8" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="mx-auto flex flex-col lg:flex-row justify-between items-start py-8 px-6 lg:px-0 container-xl">
+    <div class="flex flex-col mb-8 lg:mb-0">
+      <img src={getConfig().LOGO_WHITE_URL} alt="Aspen Publishing Logo" class="w-40 h-auto mb-4" />
     </div>
-  </footer>
-</div>
-% else:
-<!-- NEW IN INDIGO update footer -->
-  <div class="wrapper wrapper-footer">
-    <footer id="footer" class="tutor-container"
-      ## When rendering the footer through the branding API,
-      ## the direction may not be set on the parent element,
-      ## so we set it here.
-      % if bidi:
-        dir=${bidi}
-      % endif
-    >
-    <div class="footer-top">
-      <div class="powered-area">
-        ## Please leave this link and use one of the logos provided
-        ## The OpenEdX link may be hidden when this view is served
-        ## through an API to partner sites (such as marketing sites or blogs),
-        ## which are not technically powered by OpenEdX.
-        % if not hide_openedx_link:
-        <ul class="logo-list">
-          <li>Powered by:</li>
-          <li>
-            <a href="https://docs.tutor.edly.io" rel="noopener" target="_blank">
-              <img src="${static.url('images/tutor-logo.png')}" alt="Runs on Tutor" width="57" />
-            </a>
-          </li>
-          <li>
-            <a href="${footer['openedx_link']['url']}" rel="noopener" target="_blank">
-              <img src="${static.url('images/openedx-logo.png')}" alt="${footer['openedx_link']['title']}" width="79" />
-            </a>
-          </li>
-        </ul>
+
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
+      <div class="flex flex-col gap-4 text-white">
+        <h3 class="uppercase footer-link">
+          <a href="https://aspenpublishing.com/pages/discover-jd-next-program" target="_blank" rel="noopener" aria-label="About Us">About Us</a>
+        </h3>
+        <h3 class="uppercase footer-link">
+          <a href="https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next" target="_blank" rel="noopener" aria-label="Support">Support</a>
+        </h3>
       </div>
-      {% if INDIGO_FOOTER_NAV_LINKS %}
-      <nav class="nav-colophon" aria-label="${_('About')}">
-        <ol>
-            {% for link in INDIGO_FOOTER_NAV_LINKS %}
-            <li>
-              <a href="{{ link['url'] }}">{{ link['title'] }}</a>
-            </li>
-            {% endfor %}
-        </ol>
-      </nav>
-      {% endif %}
-    </div>
-    <span class="copyright-site">Copyrights ©${datetime.now().year}. All Rights Reserved.</span>
-    % endif
-      <div class="colophon">
-
-        % if context.get('include_language_selector', footer_language_selector_is_enabled()):
-            <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
-        % endif
-
-        ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-          <p class="copyright">${footer['copyright']}
-              % if icp_license_info.get('icp_license'):
-                ${u" | {text}".format(text=icp_license_info.get('text'))}
-                <a href="${icp_license_info.get('icp_license_link', '#')}">
-                    ${u" {icp}".format(icp=icp_license_info.get('icp_license'))}
-                </a>
-              % endif
-          </p>
+      <div class="flex flex-col gap-4 text-gray-300">
+        <a href="/tos" class="footer-link-extra">Terms of Service</a>
+        <a href="/privacy" class="footer-link-extra">Privacy Policy</a>
+        <a href="/disclosure" class="footer-link-extra">California Consumer Act Policy</a>
+        <a href="/agreement" class="footer-link-extra">End User License Agreement</a>
       </div>
-    </footer>
+    </div>
   </div>
-% endif
-% if include_dependencies:
-  <%static:js group='base_vendor'/>
-  <%static:css group='style-vendor'/>
-  <%include file="widgets/segment-io.html" />
-  <%include file="widgets/segment-io-footer.html" />
-% endif
-% if footer_css_urls:
-  % for url in footer_css_urls:
-    <link rel="stylesheet" type="text/css" href="${url}"></link>
-  % endfor
-% endif
+  <hr class="my-8 border-t border-d6ae75 mx-6 lg:mx-24 container-xl mx-auto" aria-hidden="true" />
+  <div class="mx-auto flex flex-col lg:flex-row justify-between items-center px-6 lg:px-0 py-8 container-xl">
+    <span class="text-gray-300 text-sm mb-4 lg:mb-0">&copy; {currentYear} ASPEN PUBLISHING</span>
+    <div class="flex gap-4 lg:gap-8">
+      <a href="https://www.facebook.com/profile.php?id=61555997104704" class="text-gray-300 text-sm">Facebook</a>
+      <a href="https://www.linkedin.com/company/aspenpublishing/" class="text-gray-300 text-sm">LinkedIn</a>
+      <a href="https://twitter.com/AspenPublishing" class="text-gray-300 text-sm">Twitter</a>
+      <a href="https://www.youtube.com/@aspenpublishing6830" class="text-gray-300 text-sm">YouTube</a>
+    </div>
+  </div>
+</footer>
